@@ -1,12 +1,12 @@
 def is_twinprime(n):
     if n <= 2:
         return False
-    pred = n - 2
-    next = n + 2
-    if is_prime(pred) and is_prime(n) or is_prime(next) and is_prime(n):
+    pred = is_prime(n-2)
+    next = is_prime(n+2)
+    n = is_prime(n)
+    if n and (pred or next):
         return True
-    else:
-        return False
+    else: return False
 
 def is_prime(n):
     d = 2
